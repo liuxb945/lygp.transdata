@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>    
+<!DOCTYPE generatorConfiguration    
+  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"    
+  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">    
+<generatorConfiguration>    
+  
+    <classPathEntry  location="mysql-connector-java-5.1.12.jar"/>    
+    <context id="DB2Tables"  targetRuntime="MyBatis3">    
+        <commentGenerator>    
+            <property name="suppressDate" value="true"/>    
+                
+            <property name="suppressAllComments" value="true"/>    
+        </commentGenerator>    
+            
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.0.18:3306/rmd" userId="root" password="admin">    
+        </jdbcConnection>    
+        <javaTypeResolver>    
+            <property name="forceBigDecimals" value="false"/>    
+        </javaTypeResolver>    
+          
+        <javaModelGenerator targetPackage="com.rmd.lygp.front.model" targetProject="code">    
+            <property name="enableSubPackages" value="true"/>    
+            <property name="trimStrings" value="true"/>    
+        </javaModelGenerator>    
+           
+        <sqlMapGenerator targetPackage="com.rmd.lygp.front.dao" targetProject="code">    
+            <property name="enableSubPackages" value="true"/>    
+        </sqlMapGenerator>    
+            
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.rmd.lygp.front.dao" targetProject="code">    
+            <property name="enableSubPackages" value="true"/>    
+        </javaClientGenerator>    
+         
+        <table tableName="t_sys_unit" domainObjectName="SysUnit" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>
+		<table tableName="t_sys_unit_pack" domainObjectName="SysUnitPack" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>
+		<table tableName="t_order_base" domainObjectName="OrderBase" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>
+        <table tableName="t_order_goodslist" domainObjectName="OrderGoodsList" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>
+		<table tableName="t_order_receiveaddress" domainObjectName="OrderReceiveAddress" enableCountByExample="true" enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true" selectByExampleQueryId="true"></table>
+    </context>    
+</generatorConfiguration>
