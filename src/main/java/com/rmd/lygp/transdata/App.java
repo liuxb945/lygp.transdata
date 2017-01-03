@@ -51,12 +51,12 @@ public class App {
 				while (rsF2.next()) {
 					// tagIds+=","+rsF2.getLong("id");
 					String sqlT = String.format(
-							"update t_order_goodslist set goodsname='%s',brandname='%s',brandId=%d,spec='%s',packinfo='%s',packnumunitid=%d,unitprice=%f,saleunitid=%d,saleunit='%s',packnum=%d,goodsimg='%s',goodsbaseid=%d where id=%d;",
+							"update t_order_goodslist set goodsname='%s',brandname='%s',brandId=%d,spec='%s',packinfo='%s',packnumunitid=%d,unitprice=%f,saleunitid=%d,saleunit='%s',packnum=%d,goodsimg='%s',goodsbaseid=%d,goods_code='%s' where id=%d;",
 							rsF2.getString("goodsname"), rsF2.getString("brandname"), rsF2.getInt("brandId"),
 							rsF2.getString("spec"), rsF2.getString("packname"), rsF2.getInt("packnumunitid"),
 							rsF2.getBigDecimal("promotionprice")==null?rsF2.getBigDecimal("prefprice"):rsF2.getBigDecimal("promotionprice"), rsF2.getInt("saleunitid"),
 									rsF2.getString("unitname"), rsF2.getInt("packnum"),
-									rsF2.getString("thumbnailurl"), rsF2.getInt("baseid"),rsF1.getLong("id"));
+									rsF2.getString("thumbnailurl"), rsF2.getInt("baseid"),rsF2.getString("code"),rsF1.getLong("id"));
 					content += sqlT+"\r\n";
 				}
 				
