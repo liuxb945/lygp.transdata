@@ -21,9 +21,10 @@ public class App {
 
 	public static void main(String[] args) {
 		try {
-			String jdbcUrlF = "jdbc:mysql://192.168.0.18:3306/rmd?characterEncoding=UTF-8";
-			String jdbcUsernameF = "root";
-			String jdbcPasswordF = "admin";
+			String jdbcUrlF=PropertiesUtil.getStringByKey("jdbc.url", "application.properties");
+			//String jdbcUrlF = "jdbc:mysql://192.168.0.18:3306/rmd?characterEncoding=UTF-8";
+			String jdbcUsernameF = PropertiesUtil.getStringByKey("jdbc.username", "application.properties");
+			String jdbcPasswordF = PropertiesUtil.getStringByKey("jdbc.password", "application.properties");
 			Connection ConnF = null;
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
 			ConnF = DriverManager.getConnection(jdbcUrlF, jdbcUsernameF, jdbcPasswordF);
